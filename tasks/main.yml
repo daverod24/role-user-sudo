@@ -1,0 +1,6 @@
+---
+- name: prerequisitos
+  include_tasks: prerequisites.yml
+
+- name: sudoers
+  include_tasks: sudoers.yml
