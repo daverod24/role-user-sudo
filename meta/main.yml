@@ -3,6 +3,7 @@ dependencies: []
 
 galaxy_info:
   author: daverod24
+  role_name: usersudo
   description: user-sudo-role
   issue_tracker_url: https://github.com/daverod24/role-user-sudo/issues
   license: "license (BSD, MIT)"
