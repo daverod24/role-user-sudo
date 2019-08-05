@@ -4,7 +4,7 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: role-user-sudo
+    - ROLE_NAME: user-sudo
   matrix:
     - MOLECULE_DISTRO: centos7
     - MOLECULE_DISTRO: fedora29
@@ -18,7 +18,7 @@ install:
 before_script:
   # Use actual Ansible Galaxy role name for the project directory.
   - cd ../
-  - mv ansible-role-$ROLE_NAME daverod24.$ROLE_NAME
+  - mv role-$ROLE_NAME daverod24.$ROLE_NAME
   - cd daverod24.$ROLE_NAME
 
 script:
