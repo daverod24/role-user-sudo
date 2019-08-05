@@ -1,17 +1,18 @@
----
-# Validate the sudoers file before saving
-- name: Configure visudo file and validate 
-  lineinfile:
-    path: "/etc/sudoers.d/001-LATAGPRO"
-    state: present
-    create: yes
-    owner: root
+--- 
+- 
+  lineinfile: 
+    create: true
     group: root
-    mode: '0640'
-    regexp: '^%LATAGPRO ALL ='
-    line: "%LATAGPRO ALL = NOPASSWD:ALL #Defaults    requiretty"
     insertafter: EOF
+    line: "%LATAGPRO ALL = NOPASSWD:ALL #Defaults    requiretty"
+    mode: "0640"
+    owner: root
+    path: /etc/sudoers.d/001-LATAGPRO
+    regexp: "^%LATAGPRO ALL ="
+    state: present
     validate: "/usr/sbin/visudo -cf %s"
-  register: "visudotest"
-
-- debug: var=visudotest
+  name: "Configure visudo file and validate"
+  register: visudotest
+- 
+  debug: var=visudotest
+  name: "visualizar la variable"
