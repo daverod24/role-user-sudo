@@ -1,27 +1,27 @@
---- 
-- 
-  group: 
+---
+-
+  group:
     name: "{{ item }}"
     state: present
   name: "Create several user group(s)"
-  with_items: 
+  with_items:
     - "{{ user_groups }}"
-- 
+-
   name: "Create several users"
-  user: 
+  user:
     expires: -1
     generate_ssh_key: "{{ user_generate_ssh_key }}"
     groups: "{{ (user_groups | join(',')) }}"
     name: "{{ item }}"
     shell: "{{ user_shell }}"
     state: present
-  with_items: 
+  with_items:
     - "{{ user_names }}"
-    
+
 # - name: "Set authorized_key to allow SSH key based logins"
 #   authorized_key:
 #     user: "{{ item }}"
 #     key: "{{ lookup('file', user_local_ssh_key_path) }}"
 #   with_items:
-#     - "{{ user_names }}"  
+#     - "{{ user_names }}"
 #   when: user_local_ssh_key_path | default(False)

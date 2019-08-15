@@ -1,6 +1,6 @@
---- 
-- 
-  lineinfile: 
+---
+-
+  lineinfile:
     create: true
     group: root
     insertafter: EOF
@@ -13,6 +13,6 @@
     validate: "/usr/sbin/visudo -cf %s"
   name: "Configure visudo file and validate"
   register: visudotest
-- 
+-
   debug: var=visudotest
   name: "visualizar la variable"
