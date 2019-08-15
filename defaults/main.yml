@@ -4,6 +4,6 @@ backup_dir: "~/tmp"
 user_groups: [LATAGPRO, LATAGDES]
 user_names: [LATAUPRO, LATAUDES]
 user_shell: "/bin/bash"
-user_generate_ssh_key: False
+user_generate_ssh_key: false
 user_local_ssh_key_path: "./files/keys/id_rsa.pub"
-user_enable_passwordless_sudo: True
+user_enable_passwordless_sudo: true
