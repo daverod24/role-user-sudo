@@ -17,4 +17,4 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role: daverod24.user.sudo
+  - role: users-sudo
